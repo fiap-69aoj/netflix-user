@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: netflix-user
+  cloud:
+    config:
+      uri: http://netflix-configuration-server.sa-east-1.elasticbeanstalk.com
