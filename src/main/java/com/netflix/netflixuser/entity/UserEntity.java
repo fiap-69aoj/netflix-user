@@ -1,8 +1,10 @@
-package com.netflix.netflixuser.model;
+package com.netflix.netflixuser.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.Collection;
 
@@ -26,9 +28,11 @@ import javax.validation.constraints.NotNull;
  */
 @Builder
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "user")
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,6 +56,6 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
     @OrderBy
     @JsonIgnore
-    private Collection<Authority> authorities;
+    private Collection<AuthorityEntity> authorities;
 
 }
