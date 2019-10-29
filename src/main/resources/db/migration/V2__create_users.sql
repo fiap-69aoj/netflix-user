@@ -5,5 +5,5 @@ CREATE TABLE `user` (
   `phone` varchar(20) NOT NULL,
   `password` varchar(256) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
+  UNIQUE KEY `user_name_unique` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;

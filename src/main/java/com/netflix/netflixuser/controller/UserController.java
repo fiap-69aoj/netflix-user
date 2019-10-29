@@ -34,6 +34,11 @@ public class UserController {
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/teste")
+    public ResponseEntity<String> teste() {
+        return new ResponseEntity<>("Teste", HttpStatus.OK);
+    }
+
     @GetMapping
     public ResponseEntity<UserResponse> findUserByEmailAndPassword(
             @RequestParam(name = "email") String email,
