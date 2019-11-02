@@ -1,7 +1,9 @@
 package com.netflix.netflixuser.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 /**
  * @author flaoliveira
@@ -11,6 +13,8 @@ import lombok.Getter;
  */
 @Builder
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserResponse {
 
     private Long id;
