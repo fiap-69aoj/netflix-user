@@ -6,6 +6,11 @@ spring:
     url: jdbc:mysql://fiapnetflix.c86nbpf4k73h.sa-east-1.rds.amazonaws.com:3306/netflix-user
     username: admin
     password: iXHggP96c3dqjJ2k
+  zipkin:
+    baseUrl: http://localhost:9411/
+  sleuth:
+    sampler:
+      percentage: 0.5
 
 eureka:
   instance:

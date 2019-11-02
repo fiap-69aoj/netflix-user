@@ -1,4 +1,4 @@
-package com.netflix.netflixuser.security;
+package com.netflix.netflixuser.filter;
 
 import com.netflix.netflixuser.service.TokenAuthenticationService;
 import org.springframework.security.core.Authentication;
