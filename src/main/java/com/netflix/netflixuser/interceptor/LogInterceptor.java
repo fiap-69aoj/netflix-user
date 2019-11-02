@@ -1,6 +1,5 @@
 package com.netflix.netflixuser.interceptor;
 
-import com.netflix.netflixuser.controller.UserController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class LogInterceptor extends HandlerInterceptorAdapter {
 
-    private static Logger logger = LoggerFactory.getLogger(UserController.class);
+    private static Logger logger = LoggerFactory.getLogger(LogInterceptor.class);
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
