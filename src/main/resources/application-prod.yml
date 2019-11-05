@@ -10,5 +10,6 @@ spring:
     baseUrl: http://zipkin:9411/
 
 eureka:
+  client:
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/
