@@ -27,7 +27,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/users").permitAll()
                 .antMatchers(
                         "/actuator/**",
-                        "/h2-console/**"
+                        "/h2-console/**",
+                        "/users/teste"
                 ).permitAll()
                 .anyRequest().authenticated()
                 .and()
