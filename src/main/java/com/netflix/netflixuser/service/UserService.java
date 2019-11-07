@@ -25,6 +25,10 @@ public class UserService {
     @Autowired
     private UserConverter userConverter;
 
+    public String get() {
+        return "Hello JUnit 5";
+    }
+
     public UserResponse save(final UserRequest userRequest) {
         UserEntity userEntity = userRepository.save(userConverter.toUserEntity(userRequest));
         return userConverter.toUserResponse(userEntity);
