@@ -6,7 +6,6 @@ import com.netflix.netflixuser.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,14 +22,13 @@ import javax.validation.Valid;
  * @since 20/10/2019 22:45
  */
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<UserResponse> save(@Valid @RequestBody final UserRequest userRequest) {
         final UserResponse userResponse = userService.save(userRequest);
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
