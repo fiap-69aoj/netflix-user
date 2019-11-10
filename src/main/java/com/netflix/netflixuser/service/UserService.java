@@ -5,6 +5,7 @@ import com.netflix.netflixuser.dto.UserRequest;
 import com.netflix.netflixuser.dto.UserResponse;
 import com.netflix.netflixuser.entity.UserEntity;
 import com.netflix.netflixuser.repository.UserRepository;
+import com.netflix.netflixuser.kafka.producer.UserCreatedProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,13 +26,14 @@ public class UserService {
     @Autowired
     private UserConverter userConverter;
 
-    public String get() {
-        return "Hello JUnit 5";
-    }
+    @Autowired
+    private UserCreatedProducer userCreatedProducer;
 
     public UserResponse save(final UserRequest userRequest) {
         UserEntity userEntity = userRepository.save(userConverter.toUserEntity(userRequest));
-        return userConverter.toUserResponse(userEntity);
+        final UserResponse userResponse = userConverter.toUserResponse(userEntity);
+        userCreatedProducer.sendMessage(userConverter.toUserConverter(userResponse));
+        return userResponse;
     }
 
     public UserResponse findUserByEmailAndPassword(final String email, final String password) {

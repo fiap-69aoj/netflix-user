@@ -1,6 +1,7 @@
 package com.netflix.netflixuser.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.netflix.netflixuser.entity.enums.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,6 +11,8 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,6 +51,9 @@ public class UserEntity implements Serializable {
     private String email;
 
     private String phone;
+
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
 
     @NotNull
     private String password;
