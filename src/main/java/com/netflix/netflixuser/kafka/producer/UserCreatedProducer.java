@@ -23,7 +23,7 @@ public class UserCreatedProducer {
     private KafkaTemplate<String, UserCreatedDto> userCreatedKafkaTemplate;
 
     public void sendMessage(UserCreatedDto user) {
-        logger.info(String.format("POST message user_created, user: %s", user.toString()));
+        logger.info(String.format("Producing %s, user: %s", TOPIC, user.toString()));
         this.userCreatedKafkaTemplate.send(TOPIC, user);
     }
 

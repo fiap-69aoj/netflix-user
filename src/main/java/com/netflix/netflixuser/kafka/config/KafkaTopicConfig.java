@@ -33,4 +33,10 @@ public class KafkaTopicConfig {
     public NewTopic topic1() {
         return new NewTopic("user_created", 1, (short) 1);
     }
+
+    @Bean
+    public NewTopic topic2() {
+        return new NewTopic("order_created", 1, (short) 1);
+    }
+
 }
