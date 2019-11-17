@@ -1,7 +1,7 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://netflix-mysql:3306/netflix-user
+    url: jdbc:mysql://netflix-mysql:3306/netflix-order
     username: root
     password: root
   jpa:
