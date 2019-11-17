@@ -5,6 +5,6 @@ LABEL source="https://github.com/fiap-69aoj/netflix-user" \
 
 ADD ./target/user-0.0.1-SNAPSHOT.jar user.jar
 
-EXPOSE 8090
+EXPOSE 8082
 
 ENTRYPOINT ["java","-jar", "-Dspring.profiles.active=prod", "/user.jar"]

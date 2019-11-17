@@ -9,4 +9,4 @@ spring:
       uri: http://netflix-configuration-server.sa-east-1.elasticbeanstalk.com
 
 server:
-  port: 8090
+  port: 8082
